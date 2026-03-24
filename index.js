@@ -74,10 +74,19 @@ app.on('ready', () => {
           }
         },
         {
-          label: 'Actualizar / Refrescar',
+          label: 'Refrescar (Recarga rápida)',
           click: () => {
              if (mb.window) {
                mb.window.webContents.reload();
+             }
+          }
+        },
+        {
+          label: 'Forzar Recarga (Borrar Caché PWA)',
+          click: async () => {
+             if (mb.window) {
+               await mb.window.webContents.session.clearCache();
+               mb.window.webContents.reloadIgnoringCache();
              }
           }
         },
