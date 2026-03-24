@@ -73,6 +73,14 @@ app.on('ready', () => {
             }
           }
         },
+        {
+          label: 'Actualizar / Refrescar',
+          click: () => {
+             if (mb.window) {
+               mb.window.webContents.reload();
+             }
+          }
+        },
         { type: 'separator' },
         {
           label: 'Cerrar Chaty',
